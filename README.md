@@ -1,4 +1,4 @@
-# Haskell - I'll enhance the repo as the time go on
+# Haskell - I'll enhance the repo as the time is going on
 Getting started with Haskell
 
 The Haskell Platform
