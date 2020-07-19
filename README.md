@@ -1,4 +1,5 @@
-# Haskell
+# For whoever is willing to learn Haskell!
+# Haskell - I'll enhance the repo as the time is going on
 Getting started with Haskell
 
 The Haskell Platform
