@@ -1,0 +1,44 @@
+Q1:
+
+Many languages use the ++ operator to increment a value; for example, x++ increments x. Do you think Haskell has an operator or function that works this way?
+
+A: 
+
+ The ++ operator used in languages such as C++ couldn’t exist in Haskell because it violates our mathematical rules for functions. 
+ The most obvious rule is that each time you call ++ on a variable, the result is different.
+
+
+ Q2:
+
+What’s the final value of the x variable in the following code?
+
+GHCi> let x = simple simple
+GHCi> let x = 6
+
+A:
+ Because you can reassign values, the final value of x is 6.
+ 
+
+Q3:
+
+Write functions named inc, double, and square that increment, double, and square an argument n, respectively.
+
+A:
+ inc x = x + 1
+ double x = x*2
+ square x = x^2
+
+
+ Q4:
+
+Write a function that takes a value n. If n is even, the function returns n - 2, and if the number is odd, the function returns 3 × n + 1. To check whether the number is even, you can use either Haskell’s even function or mod (Haskell’s modulo function).
+
+A:
+ 
+ isEven n = if n 'mod' 2 == 0
+            then n - 2
+            else 3*n + 1
+
+isEven_v2 n = if even n
+              then n - 2
+              else 3*n + 1
