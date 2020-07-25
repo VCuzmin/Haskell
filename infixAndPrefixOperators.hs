@@ -18,3 +18,14 @@ flipBinaryArgs binaryFunc = (\x y -> binaryFunc y x)
 removes2 = flipBinaryArgs (-) 2 --removes 2 from whatever number is passed in to it.
 
 division y = \x -> (/) x y -- a closure around the second argument
+
+
+-- Any infix operator (an operator that’s placed between two values, such as +) can also be used like a prefix function by wrapping it in parentheses:
+GHCi> 2 + 3
+5
+GHCi> (+) 2 3
+5
+GHCi> 10 / 2
+5.0
+GHCi> (/) 10 2
+5.0
