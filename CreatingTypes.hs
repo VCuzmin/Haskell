@@ -209,3 +209,6 @@ jackieSmith = Patient_WithRecordSintax {name = Name "Jackie" "Smith"
 
 jackieSmithUpdated = jackieSmith {age = 44} -- a new Patient type will be created
 -- Because you’re still in a purely functional world, a new Patient type will be created and must be assigned to a variable to be useful.
+
+donorFor :: Patient_WithRecordSintax -> Patient_WithRecordSintax -> Prelude.Bool
+donorFor p1 p2 = canDonateTo (bloodType p1) (bloodType p2)
