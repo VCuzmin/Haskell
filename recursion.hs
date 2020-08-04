@@ -139,6 +139,11 @@ removeOdd'' (x:xs) -- version with Guards
  | (mod x 2) == 0 = x : (removeOdd'' xs)
  | otherwise = removeOdd'' xs
 
+isEven :: Integral a => a -> Bool
+isEven x = x `mod` 2 == 0
+
+removeOdd''' :: [Integer] -> [Integer] -- version with filter function
+removeOdd''' = filter isEven
 
 null' :: [a] -> Bool
 null' [] = True -- my version of null
