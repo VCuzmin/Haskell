@@ -168,3 +168,8 @@ isFirstHalf x list = x `elem`(take firstHalf list)
 -- div is defined in class Integral and it's meaning is division of integers with truncation toward negative infinity.
 -- You're right, infix notation is just a syntactic sugar. The expression x / y is the same as (/) x y, as well as div x y is the same as x `div` y.
 
+
+
+-- null
+null [] -- True
+null [1,2,3] -- False

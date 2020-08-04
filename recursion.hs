@@ -86,9 +86,62 @@ pow2 n =
     then 1
     else 2 * (pow2 (n-1))
 
+pow2' :: (Eq t, Num t, Num p) => t -> p -- version with Guards
+pow2' n
+ | n == 0 = 1
+ | otherwise = 2 * (pow2' (n-1))
+
 
 repeatString :: (Eq t, Num t) => [Char] -> t -> [Char]
 repeatString str n = 
   if n == 0
     then ""
     else str ++ (repeatString str (n-1))
+
+
+double :: Num a => [a] -> [a]
+double nums = 
+      if null nums
+            then []
+            else 
+             (2 * (head nums)) : (double (tail nums))
+
+double' :: Num a => [a] -> [a] -- version with pattern matching
+double' [] = []
+double' (x:xs) = (2 * x) : double xs
+
+double'' :: Num a => [a] -> [a] -- version with case expressions
+double'' nums = case nums of 
+  [] -> []
+  (x:xs) -> (2 * x) : (double xs)
+ 
+removeOdd :: Integral a => [a] -> [a]
+removeOdd nums = 
+   if null nums 
+     then []
+     else
+       if (mod(head nums) 2) == 0 --even?
+         then (head nums) : (removeOdd (tail nums))
+         else 
+           removeOdd (tail nums)
+
+removeOdd' :: Integral a => [a] -> [a] -- version with pattern matching
+removeOdd' [] = []
+removeOdd' (x:xs) = 
+  if (mod x 2) == 0
+    then x : removeOdd' xs
+    else removeOdd' xs
+
+
+removeOdd'' :: Integral a => [a] -> [a]
+removeOdd'' [] = []
+removeOdd'' (x:xs) -- version with Guards
+ | (mod x 2) == 0 = x : (removeOdd'' xs)
+ | otherwise = removeOdd'' xs
+
+
+null' :: [a] -> Bool
+null' [] = True -- my version of null
+null' (x:xs) = False
+
+
