@@ -45,7 +45,9 @@ patientInfo'' (fname,lname) age height = name ++ " " ++ ageHeight
 
 
 
---  CREATING NEW TYPES
+--  CREATING NEW TYPES 
+-- Algrbraic data types
+
 -- Creating a new type can be done with the `data` keyword
 
 data Sex = Male | Female --Male or Female like Maybe
@@ -212,3 +214,4 @@ jackieSmithUpdated = jackieSmith {age = 44} -- a new Patient type will be create
 
 donorFor :: Patient_WithRecordSintax -> Patient_WithRecordSintax -> Prelude.Bool
 donorFor p1 p2 = canDonateTo (bloodType p1) (bloodType p2)
+
