@@ -30,9 +30,9 @@ inc n = n+1
 double n = n*2
 square n = n^2
 
-ifEvenInc_v2 n = ifEven inc n
-ifEvenDouble_v2 n = ifEven double n
-ifEvenSquare_v2 n = ifEven square n
+ifEvenInc' n = ifEven inc n
+ifEvenDouble' n = ifEven double n
+ifEvenSquare' n = ifEven square n
 
 
 -- Lambda functions as arguments
@@ -74,20 +74,20 @@ getLocationFunction location = case location of
 
 
 
-addressLetter_v2 name location = locationFunction name
+addressLetter' name location = locationFunction name
   where locationFunction = getLocationFunction location
 
--- GHCi> addressLetter_v2 ("Bob","Smith") "ny"
+-- GHCi> addressLetter' ("Bob","Smith") "ny"
 -- "Bob Smith: PO Box 789 - New York, NY, 10013"
 
--- GHCi> addressLetter_v2 ("Bob","Jones") "ny"
+-- GHCi> addressLetter' ("Bob","Jones") "ny"
 -- "Bob Jones: PO Box 789 - New York, NY, 10013"
 
--- GHCi> addressLetter_v2 ("Samantha","Smith") "sf"
+-- GHCi> addressLetter' ("Samantha","Smith") "sf"
 -- "Samantha Smith - PO Box 1010 - San Francisco, CA, 94109"
 
--- GHCi> addressLetter_v2 ("Bob","Smith") "reno"
+-- GHCi> addressLetter' ("Bob","Smith") "reno"
 -- "Smith - PO Box 456 - Reno, NV 89523"
 
--- GHCi> addressLetter_v2 ("Bob","Smith") "la"
+-- GHCi> addressLetter' ("Bob","Smith") "la"
 -- "Bob Smith"

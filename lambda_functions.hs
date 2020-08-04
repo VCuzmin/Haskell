@@ -24,8 +24,8 @@ sumSquareOrSquareSum x y =
     squareSum = (x + y) ^ 2
 
 --without Where clause -- hideous, horrible, ugly code! - a lot of duplication
-sumSquareOrSquareSum_v2 :: (Num a, Ord a) => a -> a -> a
-sumSquareOrSquareSum_v2 x y =
+sumSquareOrSquareSum' :: (Num a, Ord a) => a -> a -> a
+sumSquareOrSquareSum' x y =
   if (x ^ 2 + y ^ 2) > ((x + y) ^ 2)
     then (x ^ 2 + y ^ 2)
     else (x + y) ^ 2
@@ -37,26 +37,26 @@ body sumSquare squareSum =
     then sumSquare
     else squareSum
 
-sumSquareOrSquareSum_v3 :: (Num a, Ord a) => a -> a -> a
-sumSquareOrSquareSum_v3 x y = body (x ^ 2 + y ^ 2) ((x + y) ^ 2)
+sumSquareOrSquareSum'' :: (Num a, Ord a) => a -> a -> a
+sumSquareOrSquareSum'' x y = body (x ^ 2 + y ^ 2) ((x + y) ^ 2)
 
 --much better - with lambda function
-body_v2 :: Integer -> Integer -> Integer
-body_v2 =
+body' :: Integer -> Integer -> Integer
+body' =
   ( \sumSquare squareSum ->
       if sumSquare > squareSum
         then sumSquare
         else squareSum
   )
 
-sumSquareOrSquareSum_v4 :: Integer -> Integer -> Integer
-sumSquareOrSquareSum_v4 x y = body_v2 (x ^ 2 + y ^ 2) ((x + y) ^ 2)
+sumSquareOrSquareSum''' :: Integer -> Integer -> Integer
+sumSquareOrSquareSum''' x y = body' (x ^ 2 + y ^ 2) ((x + y) ^ 2)
 
 -- Haskell has an alternative to where clauses called let expressions.
 -- A let expression allows you to combine the readability of a where clause with the power of your lambda function.
 
-sumSquareOrSquareSum_v5 :: (Ord p, Num p) => p -> p -> p
-sumSquareOrSquareSum_v5 x y =
+sumSquareOrSquareSum'''' :: (Ord p, Num p) => p -> p -> p
+sumSquareOrSquareSum'''' x y =
   let sumSquare = (x ^ 2 + y ^ 2)
       squareSum = (x + y) ^ 2
    in if sumSquare > squareSum

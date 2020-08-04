@@ -29,7 +29,7 @@ names = [("Ian", "Curtis"),
 -- This function takes two arguments, name1 and name2, and returns GT, LT, or EQ. GT, LT, and EQ are special values representing greater than, less than, and equal. 
 -- In many programming languages, you’d return True or False, or 1, -1, or 0.
 
-compareLastNames_v1 name1 name2 = if lastName1 > lastName2 --compare by last names
+compareLastNames' name1 name2 = if lastName1 > lastName2 --compare by last names
                                 then GT
                                 else if lastName1 < lastName2
                                     then LT
@@ -46,11 +46,13 @@ compareLastNames_v1 name1 name2 = if lastName1 > lastName2 --compare by last nam
 
 --With compare function
 --  The compare function returns GT, LT, or EQ.
-compareLastNames_v2 name1 name2 = compare lastName1 lastName2
+compareLastNames'' :: Ord a1 => (a2, a1) -> (a3, a1) -> Ordering
+compareLastNames'' name1 name2 = compare lastName1 lastName2
              where lastName1 = snd name1
                    lastName2 = snd name2
 
-compareLastNames_v3 name1 name2 = if lastName1 > lastName2 --compare by last names. If two last name are the same then sort by first name
+compareLastNames''' :: (Ord a1, Ord a2) => (a2, a1) -> (a2, a1) -> Ordering
+compareLastNames''' name1 name2 = if lastName1 > lastName2 --compare by last names. If two last name are the same then sort by first name
                                 then GT
                                 else if lastName1 < lastName2
                                     then LT

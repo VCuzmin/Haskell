@@ -23,8 +23,8 @@ type Height = Int
 
 -- You can rewrite the original type signature now as follows:
 
-patientInfo_v2 :: FirstName -> LastName -> Age -> Height -> String
-patientInfo_v2 fname lname age height = name ++ " " ++ ageHeight
+patientInfo' :: FirstName -> LastName -> Age -> Height -> String
+patientInfo' fname lname age height = name ++ " " ++ ageHeight
             where ageHeight = "(" ++ show age ++ "yrs. " ++ show height ++ "in.)"
                   name = lname ++ ", " ++ fname
 
@@ -37,8 +37,8 @@ firstName patient = fst patient
 lastName :: PatientName -> String
 lastName patient = snd patient
 
-patientInfo_v3 :: PatientName -> Int -> Int -> String
-patientInfo_v3 (fname,lname) age height = name ++ " " ++ ageHeight
+patientInfo'' :: PatientName -> Int -> Int -> String
+patientInfo'' (fname,lname) age height = name ++ " " ++ ageHeight
  where name = lname ++ ", " ++ fname
        ageHeight = "(" ++ show age ++ "yrs. " ++ show height ++ "in.)"
 

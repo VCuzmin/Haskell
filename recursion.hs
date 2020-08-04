@@ -75,5 +75,20 @@ fastFib _ _ 2 = 1
 fastFib x y 3 = x + y
 fastFib x y c = fastFib (x + y) x (c - 1)
 
-fib_v2 :: (Eq t1, Num t1, Num t2) => t1 -> t2
-fib_v2 n = fastFib 1 1 n
+fib' :: (Eq t1, Num t1, Num t2) => t1 -> t2
+fib' n = fastFib 1 1 n
+
+
+--pow2 n = 2 to the power n
+pow2 :: (Eq t, Num t, Num p) => t -> p
+pow2 n = 
+  if n == 0
+    then 1
+    else 2 * (pow2 (n-1))
+
+
+repeatString :: (Eq t, Num t) => [Char] -> t -> [Char]
+repeatString str n = 
+  if n == 0
+    then ""
+    else str ++ (repeatString str (n-1))

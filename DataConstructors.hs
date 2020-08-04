@@ -10,7 +10,7 @@ data Colour = Red | Green | Blue
 -- Similarly, Red and Blue are both constructors that construct values of type Colour. 
 -- We could imagine spicing it up though!
 
-data Colour_v2 = RGB Int Int Int
+data Colour' = RGB Int Int Int
 
 --We still have just the type Colour, but RGB is not a value - it's a function takinf three Ins and returning a value!
 -- RGB has the type

@@ -35,14 +35,14 @@ ifEvenSquare n = ifEven square n
 genIfEven :: Integral p => (p -> p) -> p -> p
 genIfEven f = (\x -> ifEven f x)
 
-ifEvenInc_v2 :: Integer -> Integer
-ifEvenInc_v2 = genIfEven inc
+ifEvenInc' :: Integer -> Integer
+ifEvenInc' = genIfEven inc
 
-ifEvenDouble_v2 :: Integer -> Integer
-ifEvenDouble_v2 = genIfEven double
+ifEvenDouble' :: Integer -> Integer
+ifEvenDouble' = genIfEven double
 
-ifEvenSquare_v2 :: Integer -> Integer
-ifEvenSquare_v2 = genIfEven square
+ifEvenSquare' :: Integer -> Integer
+ifEvenSquare' = genIfEven square
 
 getRequestURL :: [Char] -> [Char] -> [Char] -> [Char] -> [Char]
 getRequestURL host apiKey resource id =

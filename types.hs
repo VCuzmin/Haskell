@@ -85,7 +85,7 @@ half n = n/2 --  Incorrect code!
 -- Haskell has no convention for casting types and instead relies on functions that properly transform values from one type to another. 
 -- In this case, you can use Haskell’s fromIntegral function:
 
-half_v2 n = (fromIntegral n) /2
+half' n = (fromIntegral n) /2
 
 -- Here you’ve transformed n from an Int into a more general number. 
 -- A good question now might be, “Why don’t you have to call fromIntegral on 2?” 
