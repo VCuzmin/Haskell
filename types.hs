@@ -203,3 +203,7 @@ map show [1,2,3,4]
 
 -- because show returns a type String that isn’t consistent with the original type. 
 -- The real power of map isn’t iteration, but transforming a list of one type into a list of another type.
+
+-- Help the Compiler
+x = show (read "123") -- Error
+x' = show (read "123" :: Int) -- correct because this time the read method knows to convert "123" to an Int
