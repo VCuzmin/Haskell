@@ -214,4 +214,3 @@ jackieSmithUpdated = jackieSmith {age = 44} -- a new Patient type will be create
 
 donorFor :: Patient_WithRecordSintax -> Patient_WithRecordSintax -> Prelude.Bool
 donorFor p1 p2 = canDonateTo (bloodType p1) (bloodType p2)
-
