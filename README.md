@@ -26,11 +26,13 @@ This book indicates when you’re using GHCi by using GHCi> for lines you input 
 
 $ ghci
 GHCi> :q
+
 Leaving GHCi.
 
 Working with GHCi is much like working with interpreters in most interpreted programming languages such as Python and Ruby. It can be used as a simple calculator:
 
 GHCi> 1 + 1
+
 2
 You can also write code on the fly in GHCi:
 
@@ -41,6 +43,7 @@ GHCi> x
 Prior to version 8 of GHCi, function and variable definitions needed to be prefaced with a let keyword. This is no longer necessary, but many Haskell examples on the web and in older books still include it:
 
 GHCi> let f x = x + x
+
 GHCi> f 2
 4
 
@@ -58,5 +61,6 @@ Ok, modules loaded: Main.
 In either of these cases, you can then call functions you’ve written:
 
 GHCi> :l hello.hs
+
 GHCi> main
 "Hello World!"
