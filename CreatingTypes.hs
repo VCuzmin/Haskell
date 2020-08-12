@@ -72,7 +72,7 @@ data RhType = Pos | Neg --Rh type blood
 data ABOType = A | B | AB | O -- ABO blood group
 
 data BloodType = BloodType ABOType RhType
---BloodType is made by combining an ABOType and an RhType
+-- BloodType is made by combining an ABOType and an RhType
 
 -- Notice that in this case, the data constructor has the same name as your type constructor. 
 -- If your type has only one constructor, it is common to re-use the name of the type as the constructor name.

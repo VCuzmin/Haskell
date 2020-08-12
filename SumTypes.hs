@@ -15,5 +15,5 @@ data Name = Name FirstName LastName
    | NameWithMiddle FirstName MiddleName LastName
 
 
---    In this example, you can use two type constructors that can either be a FirstName consisting of two Strings or a NameWithMiddle consisting of three Strings. 
+-- In this example, you can use two type constructors that can either be a FirstName consisting of two Strings or a NameWithMiddle consisting of three Strings. 
 -- Here, using or between two types allows you to be expressive about what types mean. 

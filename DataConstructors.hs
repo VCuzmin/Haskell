@@ -6,8 +6,8 @@
 data Colour = Red | Green | Blue
 
 -- Here, we have three data constructors. 
--- Colour is a type, and Green is a constructor that contains a value of type Colour. 
--- Similarly, Red and Blue are both constructors that construct values of type Colour. 
+-- Colour is a type constructor, and Green is a data constructor that contains a value of type Colour. 
+-- Similarly, Red and Blue are both data constructors that construct values of type Colour. 
 -- We could imagine spicing it up though!
 
 data Colour' = RGB Int Int Int
