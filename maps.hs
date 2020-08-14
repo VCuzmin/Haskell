@@ -1,7 +1,6 @@
 import qualified Data.Map as Map
 
--- qualified statement lets you give the module you're importing a name so it doesn't
--- conflist with existing functions
+-- qualified statement lets you give the module you're importing a name so it doesn't conflict with existing functions
 
 data Organ = Heart | Brain | Kidney | Spleen deriving (Show, Eq)
 
