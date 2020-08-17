@@ -202,3 +202,47 @@ minOfInts = minOfThree <$> readInt <*> readInt <*> readInt
 
 -- GHCi> minOfThree <$> Just 10 <*> Just 3 <*> Just 6
 -- Just 3
+
+
+
+-- ! USING <*> TO CREATE DATA IN A CONTEXT
+data User = User
+   { name :: String
+   , gamerId :: Int
+   , score :: Int
+   } deriving Show
+
+--    Creating a user in the context of a Maybe
+--  Here are some sample Maybe types that you’ll pretend come from a server that might have accidently sent you missing data.
+
+serverUserName :: Maybe String
+serverUserName = Just "Sue"
+
+serverGamerId :: Maybe Int
+serverGamerId = Just 1337
+
+serverScore :: Maybe Int
+serverScore = Just 9001
+
+-- To create a user from this data, you can use <$> and <*>, because your data constructor User works as a function that takes three arguments. 
+-- Here’s your code to do this in GHCi:
+-- GHCi> User <$> serverUsername <*> serverGamerId <*> serverScore
+-- Just (User {name = "Sue", gamerId = 1337, score = 9001})
+-- Another context in which you might want to create a user is from IO. 
+
+-- You can make a command-line tool that reads three lines of input for the user values and outputs your user data.
+-- You’ll reuse the readInt function from the preceding lesson to transform user input directly to an Int.
+
+-- readInt :: IO Int
+-- readInt = read <$> getLine
+
+-- main :: IO ()
+-- main = do
+--    putStrLn "Enter a username, gamerId and score"
+--    user <- User <$> getLine <*> readInt <*> readInt
+--    print user
+
+
+-- Show the result of creating a user with a missing (Nothing) userName.
+-- GHCi> User <$> Nothing <*> serverGamerId <*> serverScore
+-- Nothing
