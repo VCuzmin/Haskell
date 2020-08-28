@@ -112,7 +112,6 @@ evensGuard' :: Int -> [Int]
 evensGuard' n = [ value | value <- [1 .. n], even value]
 
 
-
 -- ? Write a list comprehension that takes the following words
 
 -- ? ["brown","blue","pink","orange"]
